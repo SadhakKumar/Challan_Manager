@@ -1,8 +1,6 @@
 .challan {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: space-between;
     width: 96%;
     padding: 1rem;
     margin: 1rem;
@@ -14,127 +12,31 @@
       width: 200px;
       height: 200px;
     }
-  
-    &__info {
-      display: block;
-      padding-left: 20rem;
-      text-align: left;
 
-      .amount {
-        padding-bottom: 1.2em;
-        font-size: x-large;
-        font-family: poppins;
-        font-weight: 800;
-        margin-left: 10rem;
-    }
+    .rightside {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0 1rem;
+        .rightcontainer{
+          display: flex;
+          justify-content: space-between;
+      }
+      .buttons{
+        display: flex;
+        justify-content: end;
+        // margin-top: 1rem;
+      }
 
-      .challan_id {
-        font-size: x-large;
-        font-family: poppins;
-        font-weight: bold;
-      }
-  
-      p {
-        margin-bottom: 0.5rem;
-        
+      .line {
+        border: none;
+        height: 1px;
+        background: linear-gradient(to right, transparent, rgba(0, 0, 0,1), transparent);
+        margin: 15px 0;
       }
     }
-  
-    .RHS_container {  
-        display: block;
-        
-        
-        
-        &__buttons {
-        display: block;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-end;
     
-            button {
-                margin-left: 0.5rem;
-                padding: 0.5rem 1rem 1rem 1rem;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                background-color: #fff;
-                cursor: pointer;
-        
-                &:hover {
-                background-color: #eee;
-                }
-            }
-        }
-    }
+  
+    
   }
-// .challan-card {
-//     display: flex;
-//     flex-direction: row;
-//     align-items: center;
-//     justify-content: space-between;
-//     border: 1px solid #ccc;
-//     border-radius: 5px;
-//     padding: 10px;
-//     margin-bottom: 20px;
-  
-//     .image-container {
-//       flex: 0 0 30%;
-//       margin-right: 10px;
-  
-//       img {
-//         max-width: 100%;
-//         height: auto;
-//       }
-//     }
-  
-//     .info-container {
-//       flex: 1;
-//       margin-right: 100px;
-//       font-size: 14px;
-
-//       #challan_id {
-//         font-weight: bold;
-//         font-size: x-large;
-//         padding-right: 1em;
-//         font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-//       }
-//       #challan_amount {
-//         font-weight: bold;
-//         font-size: x-large;
-//         font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-//       }
-  
-//       div {
-//         margin-top: 5px;
-//         margin-bottom: 5px;
-//         font-size: large;
-//       }
-//     }
-  
-//     .action-buttons {
-//       flex: 0 0 auto;
-//       display: flex;
-//       flex-direction: column;
-//       align-items: flex-end;
-  
-//       button {
-//         margin-bottom: 5px;
-//         padding: 8px 12px;
-//         border: none;
-//         border-radius: 3px;
-//         cursor: pointer;
-//         background-color: #007bff;
-//         color: #fff;
-//         font-size: 14px;
-//         display: inline;
-  
-//         &:hover {
-//           background-color: #0056b3;
-//         }
-  
-//         &:last-child {
-//           margin-bottom: 0;
-//         }
-//       }
-//     }
-//   }
-  
