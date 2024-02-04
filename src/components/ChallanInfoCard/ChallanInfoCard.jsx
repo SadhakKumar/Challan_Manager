@@ -1,5 +1,6 @@
 import React from "react";
 import "./ChallanInfoCard.scss";
+import "@fontsource/poppins";
 
 const Challan = () => {
   return (
