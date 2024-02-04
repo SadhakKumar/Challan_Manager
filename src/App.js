@@ -1,14 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
-import Navbar from './components/Navbar/Navbar';
-import ChallanInfoCard from './components/ChallanInfoCard/ChallanInfoCard'
+import { Routes,Route } from 'react-router-dom';
+import SearchLayout from './components/SearchLayout/SearchLayout';
+import ChallanInfoCard from "./components/ChallanInfoCard/ChallanInfoCard"
 
 function App() {
   return (
-    <div className="App">
-      <Navbar/>
-      <ChallanInfoCard/>
-    </div>
+    
+      <Routes>
+        <Route path = '/' element = {<SearchLayout/>}/>
+        <Route path = '/challan' element = {<ChallanInfoCard/>}/>
+      </Routes>
+    
   );
 }
 

@@ -16,32 +16,37 @@
     }
   
     &__info {
-      flex: 1;
+      display: block;
       padding-left: 20rem;
       text-align: left;
+
+      .amount {
+        padding-bottom: 1.2em;
+        font-size: x-large;
+        font-family: poppins;
+        font-weight: 800;
+        margin-left: 10rem;
+    }
 
       .challan_id {
         font-size: x-large;
         font-family: poppins;
+        font-weight: bold;
       }
   
       p {
         margin-bottom: 0.5rem;
-        font-weight: bold;
+        
       }
     }
   
     .RHS_container {  
+        display: block;
         
-        .amount {
-            padding-bottom: 1.2em;
-            font-size: x-large;
-            font-family: poppins;
-            font-weight: 800;
-        }
+        
         
         &__buttons {
-        display: flex;
+        display: block;
         flex-direction: row;
         align-items: center;
         justify-content: flex-end;
