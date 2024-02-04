@@ -26,7 +26,7 @@ function RadioButtonSearch() {
             name="search"
             value="vehicle"
             checked={search === 'vehicle'}
-            onClick={() => setSearchTypeRedux('vehicle')}
+            onChange={() => setSearchTypeRedux('vehicle')}
           />
           Vehicle No.
         </label>
@@ -36,7 +36,7 @@ function RadioButtonSearch() {
             name="search"
             value="challan"
             checked={search === 'challan'}
-            onClick={() => setSearchTypeRedux('challan')}
+            onChange={() => setSearchTypeRedux('challan')}
           />
           Challan No.
         </label>
