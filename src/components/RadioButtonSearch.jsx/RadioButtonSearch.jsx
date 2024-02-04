@@ -1,17 +1,19 @@
 import React, { useEffect , useState} from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setRadio } from '../../features/Search/SearchSlice';
+import { getRadio } from '../../features/Search/SearchSlice';
 
 function RadioButtonSearch() {
   const dispatch = useDispatch();
-  const [searchType, setSearchType] = useState('vehicle');
+  const [searchType, setSearchType] = useState('');
+    const search = useSelector(getRadio)
+
 
   useEffect(() => {
-    console.log(searchType);
-  }, [searchType]);
+    setSearchType(search);
+  }, [dispatch]);
 
   const setSearchTypeRedux = (item) => {
-    setSearchType(item);
     dispatch(setRadio(item));
   }
 
@@ -21,20 +23,20 @@ function RadioButtonSearch() {
         <label>
           <input
             type="radio"
-            name="searchType"
+            name="search"
             value="vehicle"
-            checked={searchType === 'vehicle'}
-            onChange={() => setSearchTypeRedux('vehicle')}
+            checked={search === 'vehicle'}
+            onClick={() => setSearchTypeRedux('vehicle')}
           />
           Vehicle No.
         </label>
         <label>
           <input
             type="radio"
-            name="searchType"
+            name="search"
             value="challan"
-            checked={searchType === 'challan'}
-            onChange={() => setSearchTypeRedux('challan')}
+            checked={search === 'challan'}
+            onClick={() => setSearchTypeRedux('challan')}
           />
           Challan No.
         </label>
