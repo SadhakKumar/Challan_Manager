@@ -9,8 +9,10 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   
     img {
-      width: 200px;
-      height: 200px;
+      object-fit: cover;
+      width: 25em;
+      height: auto;
+      border-radius: 10%;
     }
 
     .rightside {
@@ -33,7 +35,13 @@
             font-weight: bold;
             font-size: x-large;
           }
-      }
+       }
+       .video {
+        align-self: center;
+        padding: 1em 1em;
+       }
+
+
       .buttons{
         display: flex;
         justify-content: end;
@@ -47,4 +55,7 @@
         margin: 15px 0;
       }
     }
+    
+  
+    
   }

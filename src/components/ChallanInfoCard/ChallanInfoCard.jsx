@@ -21,9 +21,7 @@ const Challan = () => {
             
           </div>
           
-          <div className="amount">
-            <div className="">Amount: Rs. 2500</div>
-          </div>
+          <div className="amount">Amount: Rs. 2500</div>
           
         </div>
 
