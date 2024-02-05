@@ -32,7 +32,7 @@ const Challan = () => {
         <div className="buttons">
           <Button children="Challenge" onClick= {handleChallengeClick} color ="#ffffff"/>
           <Button children="Pay" onClick = {handleChallengeClick} color= "#100775"/>
-        </div>
+        </div>  
 
       </div>
       
