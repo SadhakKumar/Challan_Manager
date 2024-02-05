@@ -4,7 +4,7 @@ import "@fontsource/poppins";
 import "./UploadProofCard.scss";
 import { useDropzone } from 'react-dropzone';
 
-const UploadProofCard = () => {
+const UploadProofCard = ({data}) => {
   const [proofFiles, setProofFiles] = useState([]);
 
   const handleUploadClick = () => {
@@ -21,20 +21,20 @@ const UploadProofCard = () => {
   return (
       <div className="challan">
           <div className="challanimg">
-              <img src="https://stimg.cardekho.com/images/carexteriorimages/630x420/Maruti/Swift/10406/1697698080681/front-left-side-47.jpg?impolicy=resize&imwidth=360" alt="car" />
+              <img src={data.img} alt="car" />
           </div>
           <div className="rightside">
               <div className="rightcontainer">
                   <div className="challan__info">
-                      <span className="challan_id">Challan Number: BT530A1340</span>
-                      <p>Reason: Red Light Skip</p>
-                      <p>Location: Ulhasnagar, Thane. 421003</p>
+                      <span className="challan_id">Challan Number: {data.challan_id}</span>
+                      <p>Reason: {data.reason}</p>
+                      <p>Location: {data.location}</p>
                   </div>
 
                   <hr className="line" />
 
                   <div className="amount">
-                      <div className="">Amount: Rs. 2500</div>
+                      <div className="">Amount: Rs. {data.amount}</div>
                   </div>
               </div>
 

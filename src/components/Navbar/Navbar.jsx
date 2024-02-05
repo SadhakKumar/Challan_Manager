@@ -3,8 +3,12 @@ import "./Navbar.scss";
 import { SlArrowDown, SlSizeActual } from "react-icons/sl";
 import { FcCollect } from "react-icons/fc";
 import logo from "../../assets/logo.png";
+import Button from "../button/Button";
 
 const Navbar = () => {
+  const handleClick = () => {
+    console.log("Profile Clicked");
+  };
   return (
     <nav className="navbar">
       <div className="navbar__logo">
@@ -25,7 +29,7 @@ const Navbar = () => {
           <a href="#">Contact Us</a>
         </li>
         <li className="navbar__menu-item">
-          <a href="#">Profile</a>
+          <Button children='Profile' onClick={handleClick} color="#100775"></Button>
         </li>
       </ul>
     </nav>

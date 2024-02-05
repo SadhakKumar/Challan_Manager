@@ -3,14 +3,17 @@ import ReCAPTCHA from 'react-google-recaptcha'
 import './vehicleChallan.scss'
 import Button from '../button/Button';
 import RadioButtonSearch from '../RadioButtonSearch.jsx/RadioButtonSearch';
+import { useNavigate } from 'react-router';
 
 function VehicleChallan() {
+  const navigate = useNavigate();
   
   const [vehicleNumber, setVehicleNumber] = useState('');
   const [chassisNumber, setChassisNumber] = useState('');
 
     const handleSubmit = () => {
       console.log("pressed");
+      navigate('/view');
     };
   
     return (

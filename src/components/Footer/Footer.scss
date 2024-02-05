@@ -1,16 +1,14 @@
 
 .footer {
     display: flex;
-    position: fixed;
+    position:fixed;
     width: 100%;
     justify-content: space-around;
     padding: 10px;
     background-color: #ffffff;
     color: #000000;
     box-shadow: 5px 5px 10px #000000;
-    margin-top: auto; 
     bottom: 0px;
-    z-index: -1;
   }
   
   .operated-by{
