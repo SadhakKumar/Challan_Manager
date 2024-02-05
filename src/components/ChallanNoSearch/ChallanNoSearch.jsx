@@ -3,12 +3,15 @@ import ReCAPTCHA from 'react-google-recaptcha'
 import './ChallanNoSearch.scss'
 import Button from '../button/Button';
 import RadioButtonSearch from '../RadioButtonSearch.jsx/RadioButtonSearch';
+import { useNavigate } from 'react-router';
 
 function ChallanNoSearch() {
+    const navigate = useNavigate();
     const [challanNumber, setChallanNumber] = useState('');
 
     const handleSubmit = () => {
         console.log("pressed");
+        navigate('/view');
     }
     return (
         <div className="container">
