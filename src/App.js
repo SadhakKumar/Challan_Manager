@@ -4,6 +4,7 @@ import SearchLayout from './components/SearchLayout/SearchLayout';
 import ChallanInfoCard from "./components/ChallanInfoCard/ChallanInfoCard"
 import UploadProofCard from './components/UploadProofCard/UploadProofCard';
 import ChallanVideoCard from './components/ChallanVideoCard/ChallanVideoCard';
+import ViewChallanLayout from './components/ViewChallanLayout/ViewChallanLayout';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path = '/challan' element = {<ChallanInfoCard/>}/>
         <Route path = '/upload' element = {<UploadProofCard/>}/>
         <Route path = '/video' element = {<ChallanVideoCard/>}/>
+        <Route path = '/view' element = {<ViewChallanLayout/>}/>
       </Routes>
     
   );

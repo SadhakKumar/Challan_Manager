@@ -2,13 +2,15 @@ import React from "react";
 import "./Navbar.scss";
 import { SlArrowDown, SlSizeActual } from "react-icons/sl";
 import { FcCollect } from "react-icons/fc";
+import logo from "../../assets/logo.png";
 
 const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar__logo">
         {/*<img src="../../public/logo512.png" alt="Logo" />*/}
-        <FcCollect size={50}/>
+        {/* <FcCollect size={50}/> */}
+        <img src={logo} alt="logo" />
       </div>
       <ul className="navbar__menu">
         <li className="navbar__menu-item">
