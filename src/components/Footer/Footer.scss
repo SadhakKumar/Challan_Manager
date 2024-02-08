@@ -1,0 +1,41 @@
+
+.footer {
+    display: flex;
+    position:fixed;
+    width: 100%;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #ffffff;
+    color: #000000;
+    box-shadow: 5px 5px 10px #000000;
+    bottom: 0px;
+  }
+  
+  .operated-by{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .operated{
+        font-weight: bold;
+        align-items: center;
+        justify-content: center;
+    }
+  }
+  .helpdesk {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .help{
+        font-weight: bold;
+        align-items: center;
+        justify-content: center;
+    }
+  }
+  
+  .helpdesk {
+    text-align: right;
+  }
