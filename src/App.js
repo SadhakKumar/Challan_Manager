@@ -7,6 +7,7 @@ import ChallanVideoCard from './components/ChallanVideoCard/ChallanVideoCard';
 import ViewChallanLayout from './components/ViewChallanLayout/ViewChallanLayout';
 import ChallengeLayout from './components/ChallengeLayout/ChallengeLayout';
 import PoliceDashboard from './components/Police/PoliceDashboard/PoliceDashboard';
+import AdminLogin from './components/Admin/AdminLogin/AdminLogin';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path = '/view' element = {<ViewChallanLayout/>}/>
         <Route path = '/challenge' element = {<ChallengeLayout/>}/>
         <Route path = '/police/dashboard' element = {<PoliceDashboard/>}/>
+        <Route path = '/admin' element={<AdminLogin/>}/>
       </Routes>
     
   );
