@@ -6,6 +6,7 @@ import UploadProofCard from './components/UploadProofCard/UploadProofCard';
 import ChallanVideoCard from './components/ChallanVideoCard/ChallanVideoCard';
 import ViewChallanLayout from './components/ViewChallanLayout/ViewChallanLayout';
 import ChallengeLayout from './components/ChallengeLayout/ChallengeLayout';
+import PoliceDashboard from './components/Police/PoliceDashboard/PoliceDashboard';
 import AdminLogin from './components/Admin/AdminLogin/AdminLogin';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path = '/video' element = {<ChallanVideoCard/>}/>
         <Route path = '/view' element = {<ViewChallanLayout/>}/>
         <Route path = '/challenge' element = {<ChallengeLayout/>}/>
+        <Route path = '/police/dashboard' element = {<PoliceDashboard/>}/>
         <Route path = '/admin' element={<AdminLogin/>}/>
       </Routes>
     
