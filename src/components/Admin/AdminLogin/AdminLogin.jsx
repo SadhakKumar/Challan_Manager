@@ -8,7 +8,7 @@ import Footer from '../../Footer/Footer';
 import AdminForm from '../AdminForm/AdminForm';
 import './AdminLogin.scss'
 
-function SearchLayout() {
+function AdminLogin() {
     
   return (
     <>
@@ -23,4 +23,4 @@ function SearchLayout() {
   )
 }
 
-export default SearchLayout
+export default AdminLogin
