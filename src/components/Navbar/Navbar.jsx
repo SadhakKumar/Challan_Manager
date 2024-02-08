@@ -1,7 +1,6 @@
 import React from "react";
 import "./Navbar.scss";
 import { SlArrowDown, SlSizeActual } from "react-icons/sl";
-import { FcCollect } from "react-icons/fc";
 import logo from "../../assets/logo.png";
 import Button from "../button/Button";
 
