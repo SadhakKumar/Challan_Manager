@@ -10,7 +10,7 @@ function SearchLayout() {
   return (
     <>
         {search === 'vehicle' ? <VehicleChallan/> : <ChallanNoSearch/>}
-        {/* {Footer} */}
+        
     </>
   )
 }
