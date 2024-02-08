@@ -3,6 +3,7 @@ import Footer from '../Footer/Footer'
 import Challan from '../ChallanInfoCard/ChallanInfoCard'
 import Navbar from '../Navbar/Navbar'
 import jsonData from '../../utils/challan.json'
+import AdminNavbar from '../Admin/AdminNavbar/AdminNavbar'
 
 const ViewChallanLayout = () => {
   return (
