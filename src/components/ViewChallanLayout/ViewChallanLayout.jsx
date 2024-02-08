@@ -7,13 +7,13 @@ import jsonData from '../../utils/challan.json'
 const ViewChallanLayout = () => {
   return (
     <>
-        <Navbar />
+        <Navbar/>
         {jsonData.map((data, index) => {
           return (
-            <Challan key={index} data={data} />
+            <Challan key={index} data={data}/>
           )
         })}
-        <Footer />
+        <Footer/>
     </>
 
   )
