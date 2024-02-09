@@ -20,7 +20,7 @@
         ]
         },
         {
-            "vehicle_no": "MH 12 1235",
+            "vehicle_nso": "MH 12 1235",
             "chassis_no": "1234567890",
             "challans":[{
                 "challan_id": "6P489D5497",
