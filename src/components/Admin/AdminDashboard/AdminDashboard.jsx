@@ -20,10 +20,10 @@ const AdminDashboard = () => {
       // setAllCars(responseObject);
       // console.log(responseObject);
 
-      await axios.get('/')
+      await axios.get('/cars')
       .then((response) => {
         console.log(response.data);
-        setAllCars(response.data);
+        setAllCars(response);
       }).catch((error) => {
         console.error('Error fetching data:', error);
       })

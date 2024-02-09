@@ -5,7 +5,7 @@ import Navbar from '../Navbar/Navbar'
 import jsonData from '../../utils/challan.json'
 import { useSelector,useDispatch } from 'react-redux'
 import {getVehicleNo, getChassisNo} from '../../features/Search/SearchSlice'
-import challanJson from '../../utils/challan.json'
+import axios from '../../api/axios'
 
 const ViewChallanLayout = () => {
 
@@ -13,14 +13,33 @@ const ViewChallanLayout = () => {
   const [vehicleNumber, setVehicleNumber] = useState('');
   const [chassisNumber, setChassisNumber] = useState('');
 
- 
-  const vehicleNo = useSelector(getVehicleNo);
-  const chassisNo = useSelector(getChassisNo);
   
+
+  const [challans, setChallans] = useState([]);
+
+  // const setstate = async() => {
+  //   const vehicleNo = await useSelector(getVehicleNo);
+  //   const chassisNo = await useSelector(getChassisNo);
+
+  //   setVehicleNumber(vehicleNo);
+  //   setChassisNumber(chassisNo);
+  // }
+ 
+  
+
+  const getChallans = async() =>{
+    const response = await axios.get('/challans?vehicle_no='+vehicleNumber+'&chassis_no='+chassisNumber);
+    setChallans(response.data);
+  }
+
   useEffect(() => {
-    setVehicleNumber(vehicleNo);
-    setChassisNumber(chassisNo);
-  },[dispatch])
+    // setstate()
+
+    getChallans();
+    
+  },[])
+
+  console.log(challans);
   return (
     <>
         <Navbar/>
