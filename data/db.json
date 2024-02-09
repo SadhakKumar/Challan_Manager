@@ -3,43 +3,212 @@
         {
             "vehicle_no": "MH121234",
             "chassis_no": "123456789",
-            "challans":[{
-                "challan_id": "8T530A1340",
-                "reason": "Red Light Skip",
-                "location": "Ulhasnagar, Thane, 421003",
-                "amount": 2500,
-                "img": "https://example.com/image1.jpg"
-            },
-            {
-                "challan_id": "4K920B2771",
-                "reason": "Illegal Parking",
-                "location": "Pune, Maharashtra, 411001",
-                "amount": 1500,
-                "img": "https://example.com/image2.jpg"
-            }
-        ]
+            "challans": [
+                {
+                    "challan_id": "8T530A1340",
+                    "reason": "Red Light Skip",
+                    "location": "Ulhasnagar, Thane, 421003",
+                    "amount": 2500,
+                    "img": "https://example.com/image1.jpg"
+                },
+                {
+                    "challan_id": "4K920B2771",
+                    "reason": "Illegal Parking",
+                    "location": "Pune, Maharashtra, 411001",
+                    "amount": 1500,
+                    "img": "https://example.com/image2.jpg"
+                }
+            ]
         },
         {
-            "vehicle_no": "MH121235",
-            "chassis_no": "1234567890",
-            "challans":[{
-                "challan_id": "6P489D5497",
-                "reason": "No Helmet",
-                "location": "Bengaluru, Karnataka, 560001",
-                "amount": 1000,
-                "img": "https://example.com/image4.jpg"
-            },
-            {
-                "challan_id": "1L173F4582",
-                "reason": "Signal Jumping",
-                "location": "Kolkata, West Bengal, 700001",
-                "amount": 1800,
-                "img": "https://example.com/image6.jpg"
-            }
+            "vehicle_no": "TN345678",
+            "chassis_no": "987654321",
+            "challans": [
+                {
+                    "challan_id": "6L247C4802",
+                    "reason": "Speeding",
+                    "location": "Mumbai, Maharashtra, 400001",
+                    "amount": 2000,
+                    "img": "https://example.com/image3.jpg"
+                }
+            ]
+        },
+        {
+            "vehicle_no": "KA987654",
+            "chassis_no": "456789012",
+            "challans": [
+                {
+                    "challan_id": "9J913D5913",
+                    "reason": "No Helmet",
+                    "location": "Bangalore, Karnataka, 560001",
+                    "amount": 1000,
+                    "img": "https://example.com/image4.jpg"
+                },
+                {
+                    "challan_id": "2M379E6424",
+                    "reason": "Wrong Lane Driving",
+                    "location": "Mysore, Karnataka, 570001",
+                    "amount": 1500,
+                    "img": "https://example.com/image5.jpg"
+                }
+            ]
+        },
+        {
+            "vehicle_no": "DL543210",
+            "chassis_no": "345678901",
+            "challans": [
+                {
+                    "challan_id": "7N135F8535",
+                    "reason": "Illegal Turn",
+                    "location": "Delhi, Delhi, 110001",
+                    "amount": 1200,
+                    "img": "https://example.com/image6.jpg"
+                },
+                {
+                    "challan_id": "4R711G9246",
+                    "reason": "Seatbelt Violation",
+                    "location": "New Delhi, Delhi, 110002",
+                    "amount": 800,
+                    "img": "https://example.com/image7.jpg"
+                },
+                {
+                    "challan_id": "8S522H6957",
+                    "reason": "Driving Without License",
+                    "location": "Gurgaon, Haryana, 122001",
+                    "amount": 2000,
+                    "img": "https://example.com/image8.jpg"
+                }
+            ]
+        },
+        {
+            "vehicle_no": "UP246810",
+            "chassis_no": "234567890",
+            "challans": [
+                {
+                    "challan_id": "1T540I1068",
+                    "reason": "Red Light Skip",
+                    "location": "Lucknow, Uttar Pradesh, 226001",
+                    "amount": 2500,
+                    "img": "https://example.com/image9.jpg"
+                },
+                {
+                    "challan_id": "6O346J5189",
+                    "reason": "Illegal Parking",
+                    "location": "Kanpur, Uttar Pradesh, 208001",
+                    "amount": 1500,
+                    "img": "https://example.com/image10.jpg"
+                },
+                {
+                    "challan_id": "3P472K4590",
+                    "reason": "No Parking Zone",
+                    "location": "Allahabad, Uttar Pradesh, 211001",
+                    "amount": 1000,
+                    "img": "https://example.com/image11.jpg"
+                }
+            ]
+        },
+        {
+            "vehicle_no": "MP864209",
+            "chassis_no": "123456780",
+            "challans": [
+                {
+                    "challan_id": "9L228L1011",
+                    "reason": "Speeding",
+                    "location": "Indore, Madhya Pradesh, 452001",
+                    "amount": 2000,
+                    "img": "https://example.com/image12.jpg"
+                },
+                {
+                    "challan_id": "4M187M5422",
+                    "reason": "No Helmet",
+                    "location": "Bhopal, Madhya Pradesh, 462001",
+                    "amount": 1000,
+                    "img": "https://example.com/image13.jpg"
+                }
+            ]
+        },
+        {
+            "vehicle_no": "GJ657483",
+            "chassis_no": "012345678",
+            "challans": [
+                {
+                    "challan_id": "3N346N2033",
+                    "reason": "Red Light Skip",
+                    "location": "Ahmedabad, Gujarat, 380001",
+                    "amount": 2500,
+                    "img": "https://example.com/image14.jpg"
+                }
+            ]
+        },
+        {
+            "vehicle_no": "TN039712",
+            "chassis_no": "901234567",
+            "challans": [
+                {
+                    "challan_id": "8O445O3544",
+                    "reason": "Illegal Parking",
+                    "location": "Chennai, Tamil Nadu, 600001",
+                    "amount": 1500,
+                    "img": "https://example.com/image15.jpg"
+                }
+            ]
+        },
+        {
+            "vehicle_no": "KA983746",
+            "chassis_no": "890123456",
+            "challans": [
+                {
+                    "challan_id": "7P644P1055",
+                    "reason": "Speeding",
+                    "location": "Bangalore, Karnataka, 560001",
+                    "amount": 2000,
+                    "img": "https://example.com/image16.jpg"
+                },
+                {
+                    "challan_id": "2Q743Q5466",
+                    "reason": "No Helmet",
+                    "location": "Mangalore, Karnataka, 575001",
+                    "amount": 1000,
+                    "img": "https://example.com/image17.jpg"
+                }
+            ]
+        },
+        {
+            "vehicle_no": "DL102938",
+            "chassis_no": "789012345",
+            "challans": [
+                {
+                    "challan_id": "3R442R2077",
+                    "reason": "Illegal Turn",
+                    "location": "Delhi, Delhi, 110001",
+                    "amount": 1200,
+                    "img": "https://example.com/image18.jpg"
+                },
+                {
+                    "challan_id": "6S541S5488",
+                    "reason": "Seatbelt Violation",
+                    "location": "New Delhi, Delhi, 110002",
+                    "amount": 800,
+                    "img": "https://example.com/image19.jpg"
+                },
+                {
+                    "challan_id": "6P489D5497",
+                    "reason": "No Helmet",
+                    "location": "Bengaluru, Karnataka, 560001",
+                    "amount": 1000,
+                    "img": "https://example.com/image4.jpg"
+                },
+                {
+                    "challan_id": "1L173F4582",
+                    "reason": "Signal Jumping",
+                    "location": "Kolkata, West Bengal, 700001",
+                    "amount": 1800,
+                    "img": "https://example.com/image6.jpg"
+                }
             ]
         }
     ],
-    "cars":[
+    "cars": [
         {
             "vehicle": "MH121234",
             "color": "Red",
@@ -51,44 +220,364 @@
             "img": "https://example.com/image3.jpg"
         },
         {
-            "vehicle": "MH121235",
-            "color": "Red",
-            "make": "Honda",
-            "model": "City",
-            "chassis_no": "123456789",
-            "owner": "Rahul Sharma",
-            "contact": "9876543210",
-            "img": "https://example.com/image3.jpg"
+            "vehicle": "TN345678",
+            "color": "Blue",
+            "make": "Toyota",
+            "model": "Corolla",
+            "chassis_no": "987654321",
+            "owner": "Sneha Patel",
+            "contact": "9876543211",
+            "img": "https://example.com/image4.jpg"
         },
         {
-            "vehicle": "MH121236",
-            "color": "Red",
-            "make": "Honda",
-            "model": "City",
-            "chassis_no": "123456789",
-            "owner": "Rahul Sharma",
-            "contact": "9876543210",
-            "img": "https://example.com/image3.jpg"
+            "vehicle": "KA987654",
+            "color": "Black",
+            "make": "Ford",
+            "model": "Fiesta",
+            "chassis_no": "456789012",
+            "owner": "Amit Kumar",
+            "contact": "9876543212",
+            "img": "https://example.com/image5.jpg"
         },
         {
-            "vehicle": "MH121237",
-            "color": "Red",
-            "make": "Honda",
-            "model": "City",
-            "chassis_no": "123456789",
-            "owner": "Rahul Sharma",
-            "contact": "9876543210",
-            "img": "https://example.com/image3.jpg"
+            "vehicle": "DL543210",
+            "color": "White",
+            "make": "Maruti",
+            "model": "Swift",
+            "chassis_no": "345678901",
+            "owner": "Priya Singh",
+            "contact": "9876543213",
+            "img": "https://example.com/image6.jpg"
         },
         {
-            "vehicle": "MH121238",
+            "vehicle": "UP246810",
+            "color": "Silver",
+            "make": "Hyundai",
+            "model": "i20",
+            "chassis_no": "234567890",
+            "owner": "Rajesh Gupta",
+            "contact": "9876543214",
+            "img": "https://example.com/image7.jpg"
+        },
+        {
+            "vehicle": "MP864209",
+            "color": "Green",
+            "make": "Volkswagen",
+            "model": "Polo",
+            "chassis_no": "123456780",
+            "owner": "Neha Sharma",
+            "contact": "9876543215",
+            "img": "https://example.com/image8.jpg"
+        },
+        {
+            "vehicle": "GJ657483",
             "color": "Red",
             "make": "Honda",
-            "model": "City",
+            "model": "Accord",
+            "chassis_no": "012345678",
+            "owner": "Vivek Patel",
+            "contact": "9876543216",
+            "img": "https://example.com/image9.jpg"
+        },
+        {
+            "vehicle": "TN039712",
+            "color": "Blue",
+            "make": "Toyota",
+            "model": "Camry",
+            "chassis_no": "901234567",
+            "owner": "Meena Shah",
+            "contact": "9876543217",
+            "img": "https://example.com/image10.jpg"
+        },
+        {
+            "vehicle": "KA983746",
+            "color": "Black",
+            "make": "Ford",
+            "model": "EcoSport",
+            "chassis_no": "890123456",
+            "owner": "Arun Kumar",
+            "contact": "9876543218",
+            "img": "https://example.com/image11.jpg"
+        },
+        {
+            "vehicle": "DL102938",
+            "color": "White",
+            "make": "Maruti",
+            "model": "Baleno",
+            "chassis_no": "789012345",
+            "owner": "Riya Gupta",
+            "contact": "9876543219",
+            "img": "https://example.com/image12.jpg"
+        },
+        {
+            "vehicle": "UP928374",
+            "color": "Silver",
+            "make": "Hyundai",
+            "model": "Verna",
+            "chassis_no": "678901234",
+            "owner": "Sanjay Sharma",
+            "contact": "9876543220",
+            "img": "https://example.com/image13.jpg"
+        },
+        {
+            "vehicle": "MP817263",
+            "color": "Green",
+            "make": "Volkswagen",
+            "model": "Tiguan",
+            "chassis_no": "567890123",
+            "owner": "Renuka Patel",
+            "contact": "9876543221",
+            "img": "https://example.com/image14.jpg"
+        },
+        {
+            "vehicle": "GJ526374",
+            "color": "Red",
+            "make": "Honda",
+            "model": "Civic",
+            "chassis_no": "456789012",
+            "owner": "Ankit Verma",
+            "contact": "9876543222",
+            "img": "https://example.com/image15.jpg"
+        },
+        {
+            "vehicle": "TN192837",
+            "color": "Blue",
+            "make": "Toyota",
+            "model": "Innova",
+            "chassis_no": "345678901",
+            "owner": "Pooja Sharma",
+            "contact": "9876543223",
+            "img": "https://example.com/image16.jpg"
+        },
+        {
+            "vehicle": "KA738291",
+            "color": "Black",
+            "make": "Ford",
+            "model": "Endeavour",
+            "chassis_no": "234567890",
+            "owner": "Rakesh Kumar",
+            "contact": "9876543224",
+            "img": "https://example.com/image17.jpg"
+        },
+        {
+            "vehicle": "DL837261",
+            "color": "White",
+            "make": "Maruti",
+            "model": "Dzire",
             "chassis_no": "123456789",
-            "owner": "Rahul Sharma",
-            "contact": "9876543210",
-            "img": "https://example.com/image3.jpg"
-        }
+            "owner": "Aarti Singh",
+            "contact": "9876543225",
+            "img": "https://example.com/image18.jpg"
+        },
+        {
+            "vehicle": "UP183726",
+            "color": "Silver",
+            "make": "Hyundai",
+            "model": "Creta",
+            "chassis_no": "012345678",
+            "owner": "Rohit Gupta",
+            "contact": "9876543226",
+            "img": "https://example.com/image19.jpg"
+        },
+        {
+            "vehicle": "MP738291",
+            "color": "Green",
+            "make": "Volkswagen",
+            "model": "Jetta",
+            "chassis_no": "901234567",
+            "owner": "Suresh Patel",
+            "contact": "9876543227",
+            "img": "https://example.com/image20.jpg"
+        },
+        {
+            "vehicle": "GJ283746",
+            "color": "Red",
+            "make": "Honda",
+            "model": "BR-V",
+            "chassis_no": "890123456",
+            "owner": "Sonali Sharma",
+            "contact": "9876543228",
+            "img": "https://example.com/image21.jpg"
+        },
+        {
+            "vehicle": "KA263748",
+            "color": "Black",
+            "make": "Ford",
+            "model": "Aspire",
+            "chassis_no": "678901234",
+            "owner": "Shivani Patel",
+            "contact": "9876543230",
+            "img": "https://example.com/image23.jpg"
+        },
+        {
+            "vehicle": "DL647382",
+            "color": "White",
+            "make": "Maruti",
+            "model": "Ertiga",
+            "chassis_no": "567890123",
+            "owner": "Vikas Gupta",
+            "contact": "9876543231",
+            "img": "https://example.com/image24.jpg"
+        },
+        {
+            "vehicle": "UP283746",
+            "color": "Silver",
+            "make": "Hyundai",
+            "model": "Venue",
+            "chassis_no": "456789012",
+            "owner": "Preeti Sharma",
+            "contact": "9876543232",
+            "img": "https://example.com/image25.jpg"
+        },
+        {
+            "vehicle": "MP647382",
+            "color": "Green",
+            "make": "Volkswagen",
+            "model": "Passat",
+            "chassis_no": "345678901",
+            "owner": "Ravi Patel",
+            "contact": "9876543233",
+            "img": "https://example.com/image26.jpg"
+        },
+        {
+            "vehicle": "GJ192837",
+            "color": "Red",
+            "make": "Honda",
+            "model": "HR-V",
+            "chassis_no": "234567890",
+            "owner": "Nidhi Sharma",
+            "contact": "9876543234",
+            "img": "https://example.com/image27.jpg"
+        },
+        {
+            "vehicle": "TN283746",
+            "color": "Blue",
+            "make": "Toyota",
+            "model": "Fortuner",
+            "chassis_no": "123456789",
+            "owner": "Ashish Gupta",
+            "contact": "9876543235",
+            "img": "https://example.com/image28.jpg"
+        },
+        {
+            "vehicle": "KA647382",
+            "color": "Black",
+            "make": "Ford",
+            "model": "Freestyle",
+            "chassis_no": "012345678",
+            "owner": "Sakshi Patel",
+            "contact": "9876543236",
+            "img": "https://example.com/image29.jpg"
+        },
+        {
+            "vehicle": "DL192837",
+            "color": "White",
+            "make": "Maruti",
+            "model": "Alto",
+            "chassis_no": "901234567",
+            "owner": "Ankur Gupta",
+            "contact": "9876543237",
+            "img": "https://example.com/image30.jpg"
+        },
+        {
+            "vehicle": "UP283746",
+            "color": "Silver",
+            "make": "Hyundai",
+            "model": "Santa Fe",
+            "chassis_no": "890123456",
+            "owner": "Deepak Sharma",
+            "contact": "9876543238",
+            "img": "https://example.com/image31.jpg"
+        },
+        {
+            "vehicle": "MP647382",
+            "color": "Green",
+            "make": "Volkswagen",
+            "model": "Arteon",
+            "chassis_no": "789012345",
+            "owner": "Pooja Patel",
+            "contact": "9876543239",
+            "img": "https://example.com/image32.jpg"
+        },
+        {
+            "vehicle": "GJ192837",
+            "color": "Red",
+            "make": "Honda",
+            "model": "Passport",
+            "chassis_no": "678901234",
+            "owner": "Anil Sharma",
+            "contact": "9876543240",
+            "img": "https://example.com/image33.jpg"
+        },
+        {
+            "vehicle": "TN283746",
+            "color": "Blue",
+            "make": "Toyota",
+            "model": "Land Cruiser",
+            "chassis_no": "567890123",
+            "owner": "Neeta Patel",
+            "contact": "9876543241",
+            "img": "https://example.com/image34.jpg"
+        },
+        {
+            "vehicle": "KA647382",
+            "color": "Black",
+            "make": "Ford",
+            "model": "Mustang",
+            "chassis_no": "456789012",
+            "owner": "Rohit Sharma",
+            "contact": "9876543242",
+            "img": "https://example.com/image35.jpg"
+        },
+        {
+            "vehicle": "DL192837",
+            "color": "White",
+            "make": "Maruti",
+            "model": "Ignis",
+            "chassis_no": "345678901",
+            "owner": "Raj Gupta",
+            "contact": "9876543243",
+            "img": "https://example.com/image36.jpg"
+        },
+        {
+            "vehicle": "UP283746",
+            "color": "Silver",
+            "make": "Hyundai",
+            "model": "Grand i10",
+            "chassis_no": "234567890",
+            "owner": "Kriti Sharma",
+            "contact": "9876543244",
+            "img": "https://example.com/image37.jpg"
+        },
+        {
+            "vehicle": "MP647382",
+            "color": "Green",
+            "make": "Volkswagen",
+            "model": "Golf",
+            "chassis_no": "123456789",
+            "owner": "Prakash Patel",
+            "contact": "9876543245",
+            "img": "https://example.com/image38.jpg"
+        },
+        {
+            "vehicle": "GJ192837",
+            "color": "Red",
+            "make": "Honda",
+            "model": "Ridgeline",
+            "chassis_no": "012345678",
+            "owner": "Nisha Sharma",
+            "contact": "9876543246",
+            "img": "https://example.com/image39.jpg"
+        },
+        {
+            "vehicle": "TN283746",
+            "color": "Blue",
+            "make": "Toyota",
+            "model": "Rav4",
+            "chassis_no": "901234567",
+            "owner": "Sudhir Patel",
+            "contact": "9876543247",
+            "img": "https://example.com/image40.jpg"
+    }
     ]
 }
