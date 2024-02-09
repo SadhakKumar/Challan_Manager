@@ -4,16 +4,24 @@ import './vehicleChallan.scss'
 import Button from '../button/Button';
 import RadioButtonSearch from '../RadioButtonSearch.jsx/RadioButtonSearch';
 import { useNavigate } from 'react-router';
-
+import { useDispatch } from 'react-redux';
+import {setVehicleNo,setChassisNo} from '../../features/Search/SearchSlice'
 
 function VehicleChallan() {
   const navigate = useNavigate();
-  
+  const dispatch = useDispatch();
+
   const [vehicleNumber, setVehicleNumber] = useState('');
   const [chassisNumber, setChassisNumber] = useState('');
 
     const handleSubmit = () => {
-      console.log("pressed");
+      if(vehicleNumber === '' || chassisNumber === ''){
+        alert('Please fill all the fields');
+        return;
+      }
+      dispatch(setChassisNo(chassisNumber));
+      dispatch(setVehicleNo(vehicleNumber));
+      
       navigate('/view');
     };
   
