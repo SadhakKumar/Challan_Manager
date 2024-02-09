@@ -5,6 +5,7 @@ import Navbar from '../Navbar/Navbar'
 import jsonData from '../../utils/challan.json'
 import { useSelector,useDispatch } from 'react-redux'
 import {getVehicleNo, getChassisNo} from '../../features/Search/SearchSlice'
+import challanJson from '../../utils/challan.json'
 
 const ViewChallanLayout = () => {
 
