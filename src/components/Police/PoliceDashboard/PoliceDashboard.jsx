@@ -7,9 +7,11 @@ import { Link } from 'react-router-dom'
 import Button from '../../button/Button'
 import axios from '../../../api/axios';
 import CarCard from '../CarCard/CarCard';
+import { useNavigate } from 'react-router-dom';
 
 const PoliceDashboard = () => {
 
+  const navigate = useNavigate();
   const[challans, setChallans] = useState(null);
   const[car, setCar] = useState(null);
 
@@ -17,9 +19,27 @@ const PoliceDashboard = () => {
     evt.preventDefault();
     const vehicleNo = evt.target[0].value;
     const responseChallans = await axios.get(`/challans?vehicle_no=${vehicleNo}`);
-    setChallans(responseChallans?.data[0]?.challans??null);
+
+    let maxLength = 0;
+    let maxLengthIndex = 0;
+    responseChallans?.data?.forEach((vehicle, index) => {
+      if(vehicle.challans.length > maxLength){
+        maxLength = vehicle.challans.length;
+        maxLengthIndex = index;
+      }
+    });
+
+    setChallans(responseChallans?.data[maxLengthIndex]?.challans??null);
     const responseCar = await axios.get(`/cars?vehicle=${vehicleNo}`);
     setCar(responseCar?.data[0]??null);
+  }
+
+  const handleAddChallan = () => {
+    if(car){
+      navigate(`/police/dashboard/challanform/${car.vehicle}`);
+    }else{
+      alert('Please enter a valid vehicle number')
+    }
   }
   
   return (
@@ -46,9 +66,7 @@ const PoliceDashboard = () => {
             )}
           </div>
             <div className="add-challenge-button">
-              <Link to="/">
-                <Button children="Add Challan" onClick={()=>console.log("Challenge added!")} color ="#100775"/>
-              </Link>
+                <Button children="Add Challan" onClick={handleAddChallan} color ="#100775"/>
             </div>
         </div>
         <Footer />

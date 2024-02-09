@@ -10,10 +10,16 @@ function PoliceForm() {
   
   const [userName, setUserName] = useState('');
   const [organisationName, setOrganistaionName] = useState('');
+  
 
     const handleSubmit = () => {
+
+      if(userName === '' || organisationName === ''){
+        alert('Please fill all the fields');
+        return;
+      }
       console.log("pressed");
-      navigate('/view');
+      navigate('/police/dashboard');
     };
   
     return (

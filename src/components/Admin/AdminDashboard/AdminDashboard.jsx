@@ -1,17 +1,15 @@
 import React,{useEffect,useState} from 'react'
 import Footer from '../../Footer/Footer'
 import Challan from '../ChallanInfoCard/ChallanInfoCard'
-import Navbar from '../../Navbar/Navbar'
-import jsonData from '../../../utils/challan.json'
+import AdminNavbar from '../AdminNavbar/AdminNavbar'
 import "./AdminDashboard.scss";
-import { Link } from 'react-router-dom'
-import Button from '../../button/Button'
 import axios from '../../../api/axios'
 // import axios from 'axios'
 
 const AdminDashboard = () => {
 
   const [allCars, setAllCars] = useState([])
+  const [searchedCars, setSearchedCars] = useState('')
 
   const getAllCars = async () => {
     try {
@@ -23,7 +21,7 @@ const AdminDashboard = () => {
       await axios.get('/cars')
       .then((response) => {
         console.log(response.data);
-        setAllCars(response);
+        setAllCars(response.data);
       }).catch((error) => {
         console.error('Error fetching data:', error);
       })
@@ -37,30 +35,38 @@ const AdminDashboard = () => {
     getAllCars()
     
   },[])
+
+  const handleChange = (e) => {
+    setSearchedCars(e.target.value);
+  }
+
+  const filterCars = allCars.filter((car) => {
+    return car.vehicle.toLowerCase().includes(searchedCars.toLowerCase());
+  })
   return (
     <>
-        <Navbar />
-        <div className="police_container">
-          {/* <div className="vehicle-number-input">
+        <AdminNavbar />
+        <form className="vehicle-number-input" onChange={handleChange}>
               <input
                 type="text"
+                value={searchedCars}
                 id="searchByVehicleNumber"
                 name="searchByVehicleNumber"
                 placeholder='Search by Vehicle Number'
               />
-          </div> */}
+          </form>
+        <div className="police_container">
           <div className='grid'>
-            {jsonData.map((data, index) => (
+            {searchedCars.length != 0 ? filterCars.length != 0 ? filterCars.map((data, index) => (
+              <div className='item'>
+                <Challan key={index} data={data} />
+              </div>)
+            ) : <h2>No Vehicle Found</h2> : allCars.map((data, index) => (
               <div className='item'>
                 <Challan key={index} data={data} />
               </div>)
             )}
           </div>
-            <div className="add-challenge-button">
-              <Link to="/">
-                <Button children="Add Challenge" onClick={()=>console.log("Challenge added!")} color ="#100775"/>
-              </Link>
-            </div>
         </div>
         <Footer />
     </>

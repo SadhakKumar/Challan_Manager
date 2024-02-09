@@ -1,0 +1,15 @@
+.detail-heading{
+    font-size: 2rem;
+    font-weight: 600;
+    margin: auto 20px;
+}
+.item{
+    font-weight: bold;
+    text-align: center;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    grid-gap: 1rem;
+    margin: auto 20px;
+}

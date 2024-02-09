@@ -13,7 +13,7 @@ function AdminForm() {
 
     const handleSubmit = () => {
       console.log("pressed");
-      navigate('/view');
+      navigate('/admin/dashboard');
     };
   
     return (
