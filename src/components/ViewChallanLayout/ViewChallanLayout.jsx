@@ -12,42 +12,37 @@ const ViewChallanLayout = () => {
   const dispatch = useDispatch();
   const [vehicleNumber, setVehicleNumber] = useState('');
   const [chassisNumber, setChassisNumber] = useState('');
-
-  
-
   const [challans, setChallans] = useState([]);
 
-  // const setstate = async() => {
-  //   const vehicleNo = await useSelector(getVehicleNo);
-  //   const chassisNo = await useSelector(getChassisNo);
+  const vehicleNo = useSelector(getVehicleNo);
+  const chassisNo = useSelector(getChassisNo);
 
-  //   setVehicleNumber(vehicleNo);
-  //   setChassisNumber(chassisNo);
-  // }
- 
-  
 
   const getChallans = async() =>{
-    const response = await axios.get('/challans?vehicle_no='+vehicleNumber+'&chassis_no='+chassisNumber);
+    const response = await axios.get('/challans?vehicle_no='+vehicleNo+'&chassis_no='+chassisNo);
     setChallans(response.data);
   }
 
   useEffect(() => {
-    // setstate()
-
+    setVehicleNumber(vehicleNo);
+    setChassisNumber(chassisNo);
+   
     getChallans();
     
-  },[])
+  },[dispatch,vehicleNo,chassisNo])
 
   console.log(challans);
+
+  const render = challans.length > 0 ? challans[0].challans.map((data, index) => {
+    return (
+      <Challan key={index} data={data}/>
+    )
+  }): <h1>No Challans Found</h1>
+
   return (
     <>
         <Navbar/>
-        {jsonData.map((data, index) => {
-          return (
-            <Challan key={index} data={data}/>
-          )
-        })}
+        {render}
         <Footer/>
     </>
 
