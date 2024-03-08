@@ -4,6 +4,7 @@ import Challan from '../ChallanInfoCard/ChallanInfoCard'
 import AdminNavbar from '../AdminNavbar/AdminNavbar'
 import "./AdminDashboard.scss";
 import axios from '../../../api/axios'
+import Navbar from '../../Navbar/Navbar';
 // import axios from 'axios'
 
 const AdminDashboard = () => {
@@ -45,16 +46,16 @@ const AdminDashboard = () => {
   })
   return (
     <>
-        <AdminNavbar />
+        <Navbar />
         <form className="vehicle-number-input" onChange={handleChange}>
-              <input
-                type="text"
-                value={searchedCars}
-                id="searchByVehicleNumber"
-                name="searchByVehicleNumber"
-                placeholder='Search by Vehicle Number'
-              />
-          </form>
+          <input
+            type="text"
+            value={searchedCars}
+            id="searchByVehicleNumber"
+            name="searchByVehicleNumber"
+            placeholder='Search by Vehicle Number'
+          />
+        </form>
         <div className="police_container">
           <div className='grid'>
             {searchedCars.length != 0 ? filterCars.length != 0 ? filterCars.map((data, index) => (

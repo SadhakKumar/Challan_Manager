@@ -45,30 +45,32 @@ const PoliceDashboard = () => {
   return (
     <>
         <Navbar />
-        <div className="police_container">
-          <form className="vehicle-number-input" onSubmit={evt=>handleSubmit(evt)}>
-              <input
-                type="text"
-                id="searchByVehicleNumber"
-                name="searchByVehicleNumber"
-                placeholder='Search by Vehicle Number'
-              />
-          </form>
-          <div>
-            {car ? <CarCard data={car} /> : <h1>No Vehicle Found</h1> }
-          </div>
-          { car && (challans ? <h1>Challans Found: {challans.length}</h1> : <h1>No Challans Found</h1>) }
-          <div className='grid'>
-            {challans && challans.map((data, index) => (
-              <div className='item'>
-                <Challan key={index} data={data} />
-              </div>)
-            )}
-          </div>
-            <div className="add-challenge-button">
-                <Button children="Add Challan" onClick={handleAddChallan} color ="#100775"/>
+        <main>
+          <div className="police_container">
+            <form className="vehicle-number-input" onSubmit={evt=>handleSubmit(evt)}>
+                <input
+                  type="text"
+                  id="searchByVehicleNumber"
+                  name="searchByVehicleNumber"
+                  placeholder='Search by Vehicle Number'
+                />
+            </form>
+            <div>
+              {car ? <CarCard data={car} /> : <h1>No Vehicle Found</h1> }
             </div>
-        </div>
+            { car && (challans ? <h1>Challans Found: {challans.length}</h1> : <h1>No Challans Found</h1>) }
+            <div className='grid'>
+              {challans && challans.map((data, index) => (
+                <div className='item'>
+                  <Challan key={index} data={data} />
+                </div>)
+              )}
+            </div>
+              <div className="add-challenge-button">
+                  <Button children="Add Challan" onClick={handleAddChallan} color ="#100775"/>
+              </div>
+          </div>
+        </main>
         <Footer />
     </>
 

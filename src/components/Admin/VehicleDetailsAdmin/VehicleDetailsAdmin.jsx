@@ -48,6 +48,7 @@ const VehicleDetailsAdmin = () => {
         <h1 className='detail-heading'>Vehicle Details</h1>
 
         <CarCard data={vehicleDetails}/>
+        <hr style={{width: '80%', backgroundColor: 'rgb(30, 30, 101);'}} />
 
         {challans.length > 0 ? <h1 className='detail-heading'>Challans</h1> : <h1 className='details-heading'>No Challans Found</h1>}
         <div className='grid' >

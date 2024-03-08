@@ -17,7 +17,6 @@ function AdminLogin() {
         <div className='box'>
 
         </div>
-        <Footer/>
 
     </>
   )

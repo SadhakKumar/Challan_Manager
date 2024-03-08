@@ -17,7 +17,6 @@ function PoliceLogin() {
         <div className='box'>
 
         </div>
-        <Footer/>
 
     </>
   )

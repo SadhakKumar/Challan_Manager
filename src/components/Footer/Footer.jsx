@@ -16,11 +16,10 @@ const Footer = () => {
           <div className='help'>eChallan Helpdesk Contact details</div>
           <div>
             <img src=''  className="phone-icon" />
-            844 844 8960
+            <p>844 844 8960</p>
           </div>
         </div>
       </footer>
-      <div className='gutter-space'></div>
     </>
   );
 };
