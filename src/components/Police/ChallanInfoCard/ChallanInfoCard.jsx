@@ -10,10 +10,10 @@ const Challan = ({data}) => {
       </div>
       <div className="rightcontainer">
         <div className="challan__info">
-          <p className="challan_id">Challan Number: {data.challan_id}</p>
-          <p>Reason: {data.reason}</p>
-          <p>Location: {data.location}</p>
-          <p className="amount">Amount: Rs. {data.amount}</p>
+          <p className="challan_id">Challan Number: {data.challanID}</p>
+          <p>Reason: OverSpeeding</p>
+          <p>Location: Mumbai</p>
+          <p className="amount">Amount: Rs. {data.fine}</p>
         </div>
       </div>
     </div>

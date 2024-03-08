@@ -26,15 +26,15 @@ const UploadProofCard = ({data}) => {
           <div className="rightside">
               <div className="rightcontainer">
                   <div className="challan__info">
-                      <span className="challan_id">Challan Number: {data.challan_id}</span>
-                      <p>Reason: {data.reason}</p>
-                      <p>Location: {data.location}</p>
+                      <span className="challan_id">Challan Number: {data.challanID}</span>
+                      <p>Reason:    OverSpeeding</p>
+                      <p>Location: Navi Mumbai</p>
                   </div>
 
                   <hr className="line" />
 
                   <div className="amount">
-                      <div className="">Amount: Rs. {data.amount}</div>
+                      <div className="">Amount: Rs. {data.fine}</div>
                   </div>
               </div>
 

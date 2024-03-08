@@ -22,13 +22,13 @@ const Challan = ({data}) => {
       <div className="rightside">
         <div className="rightcontainer">
           <div className="challan__info">
-            <span className="challan_id">Challan Number: {data.challan_id}</span>
-            <p>Reason: {data.reason}</p>
-            <p>Location: {data.location}</p>
+            <span className="challan_id">Challan Number: {data.challanID}</span>
+            <p>Reason: OverSpeeding</p>
+            <p>Location: Navi mumbai</p>
             
           </div>
           
-          <div className="amount">Amount: Rs. {data.amount}</div>
+          <div className="amount">Amount: Rs. {data.fine}</div>
           
         </div>
 

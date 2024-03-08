@@ -25,7 +25,7 @@ function App() {
         <Route path = '/challenge' element = {<ChallengeLayout/>}/>
         <Route path = '/police/dashboard' element = {<PoliceDashboard/>}/>
         <Route path='/police/dashboard/challanform/:vehicle_no' element = {<ChallanForm/>}/>
-        <Route path = '/police' element = {<PoliceLogin/>}/>
+        <Route path = '/police' element = {<PoliceLogin/>}/>  
         <Route path = '/admin' element={<AdminLogin/>}/>
         <Route path = '/admin/dashboard' element={<AdminDashboard/>}/>
         <Route path = '/admin/dashboard/:vehicleno' element={<VehicleDetailsAdmin/>}/>

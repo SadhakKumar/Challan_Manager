@@ -4,6 +4,7 @@ import './AdminForm.scss'
 import Button from '../../button/Button';
 import RadioButtonSearch from '../../RadioButtonSearch.jsx/RadioButtonSearch';
 import { useNavigate } from 'react-router';
+import axios from 'axios';
 
 function AdminForm() {
   const navigate = useNavigate();
@@ -11,10 +12,29 @@ function AdminForm() {
   const [userName, setUserName] = useState('');
   const [organisationName, setOrganistaionName] = useState('');
 
-    const handleSubmit = () => {
-      console.log("pressed");
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Prevents the default form submission behavior
+    
+    try {
+      const response = await axios.post("https://pbfw4n92-4002.inc1.devtunnels.ms/user", {
+        username: userName,
+        orgName: organisationName,
+      });
+      
+
+      const token = response.data.token;
+
+      // // Set the token as a cookie
+      document.cookie = `token=${token}; path=/;`;
+
+      console.log("Token set as cookie:", token);
+
       navigate('/admin/dashboard');
-    };
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+  
   
     return (
       <div className='root'>
