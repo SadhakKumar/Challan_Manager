@@ -12,4 +12,7 @@
     grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
     grid-gap: 1rem;
     margin: auto 20px;
+    .item {
+        max-width: 50vw;
+    }
 }

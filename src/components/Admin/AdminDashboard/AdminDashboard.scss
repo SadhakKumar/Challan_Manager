@@ -11,17 +11,27 @@
     padding: 2rem;
 }
 .vehicle-number-input {
-    width: 100%;
-    margin-bottom: 2rem;
     margin: auto;
-    width: 50%;
-    input {
-        padding: 8px 0;
-        width: 100%;
-        border: 1px solid #ccc;
-        border-radius: 4px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  
+    input[type='text'] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      outline: none;
+  
+      &::placeholder {
+        color: #999;
+      }
     }
-}
+  }
+  
 .add-challenge-button {
     position: fixed;
     bottom: 100px;

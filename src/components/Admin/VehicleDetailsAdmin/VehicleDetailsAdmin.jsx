@@ -39,9 +39,6 @@ const VehicleDetailsAdmin = () => {
     
     }
 
-    console.log(vehicleDetails);
-    console.log(challans);
-
     useEffect(() => {
         getVehicleDetails()
     },[])
@@ -53,7 +50,7 @@ const VehicleDetailsAdmin = () => {
         <CarCard data={vehicleDetails}/>
 
         {challans.length > 0 ? <h1 className='detail-heading'>Challans</h1> : <h1 className='details-heading'>No Challans Found</h1>}
-        <div className='grid'>
+        <div className='grid' >
         {challans.map((data, index) => (
             <div className='item'>
             <Challan key={index} data={data} />
