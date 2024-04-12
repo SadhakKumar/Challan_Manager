@@ -24,8 +24,17 @@ const ViewChallanLayout = () => {
       const response = await axios.get('/challans?vehicle_no='+vehicleNo+'&chassis_no='+chassisNo);
       setPendingChallans(response?.data[0]?.pending_challans ?? []);
       setCompletedChallans(response?.data[0]?.completed_challans ?? []);
-      setChallengedChallans(response?.data[0]?.challenged_challans ?? []);
+      
     }
+
+
+    const getChallengedChallans = async() =>{
+        const response = await axios.get("http://localhost:3000/assets");
+        console.log(response.data);
+        setChallengedChallans(response.data);
+        console.log("challengedChallans" + challengedChallans);
+    }
+    getChallengedChallans();
     getChallans();
   },[chassisNo, vehicleNo]);
 
@@ -72,7 +81,8 @@ const ViewChallanLayout = () => {
               <div className='view-grid' >
                   {challengedChallans.map((data, index) => (
                       <div className='item mb-4'>
-                      <ChallangedChallan key={index} data={data} isPending={false} />
+                        {data.CarNo === vehicleNo ? <ChallangedChallan key={index} data={data} isPending={false} /> : <></>
+                        }
                       </div>
                   ))}
               </div>

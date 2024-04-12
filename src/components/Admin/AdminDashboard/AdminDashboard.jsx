@@ -31,13 +31,18 @@ const AdminDashboard = () => {
         console.error('Error fetching data:', error);
       })
 
-      await axios.get('/challanged_challans')
-      .then((response) => {
-        console.log(response.data);
-        setChallengedChallans(response.data);
-      }).catch((error) => {
-        console.error('Error fetching data:', error);
-      })
+      // await axios.get('/challanged_challans')
+      // .then((response) => {
+      //   console.log(response.data);
+      //   setChallengedChallans(response.data);
+      // }).catch((error) => {
+      //   console.error('Error fetching data:', error);
+      // })
+
+      const response = await axios.get('http://localhost:3000/assets');
+      setChallengedChallans(response.data);
+      console.log(response.data);
+
     } catch (error) {
       console.error('Error fetching data:', error);
     }

@@ -5,8 +5,12 @@ import "./UploadProofCard.scss";
 import { useDropzone } from 'react-dropzone';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import { useSelector } from 'react-redux'
+import {getVehicleNo, getChassisNo} from '../../features/Search/SearchSlice'
 
 const UploadProofCard = ({data}) => {
+    const vehicleNo = useSelector(getVehicleNo);
+
     const navigate = useNavigate();
     console.log(data);
   const [proofFiles, setProofFiles] = useState([]);
@@ -14,12 +18,12 @@ const UploadProofCard = ({data}) => {
   const handleUploadClick = async() => {
     try {
         const response = await axios.post("http://localhost:3000/assets", {
-            "challanNo": "9876543217",
-            "carNo": "MH12AC2737",  
-            "challanAmount": 2000,
-            "reason": "OverSpeed",
+            "challanNo": data.challan_id,
+            "carNo": vehicleNo,  
+            "challanAmount": data.amount,
+            "reason": data.reason,
             "owner": "sadhak",
-            "proof": "VideoLink",
+            "proof": data.img,
             "status": "waiting"
         }, {
           headers: {
