@@ -14,6 +14,7 @@ const ViewChallanLayout = () => {
   const chassisNo = useSelector(getChassisNo);
 
   const [currentTab, setcurrentTab] = useState('pending');
+  const [data, setData] = useState(null);
   
   const [pendingChallans, setPendingChallans] = useState([]);
   const [completedChallans, setCompletedChallans] = useState([]);
@@ -22,6 +23,7 @@ const ViewChallanLayout = () => {
   useEffect(() => {
     const getChallans = async() =>{
       const response = await axios.get('/challans?vehicle_no='+vehicleNo+'&chassis_no='+chassisNo);
+      setData(response?.data[0]);
       setPendingChallans(response?.data[0]?.pending_challans ?? []);
       setCompletedChallans(response?.data[0]?.completed_challans ?? []);
       setChallengedChallans(response?.data[0]?.challenged_challans ?? []);
@@ -50,9 +52,9 @@ const ViewChallanLayout = () => {
           <div className={(currentTab==='pending' ? '' : 'hidden ')+"p-4 rounded-lg"} id="profile" role="tabpanel" aria-labelledby="profile-tab">
               {pendingChallans?.length > 0 ? <></> : <h1 className='details-heading'>No Pending Challans Found</h1>}
               <div className='view-grid' >
-                  {pendingChallans.map((data, index) => (
+                  {pendingChallans.map((challan, index) => (
                       <div className='item mb-4'>
-                      <Challan key={index} data={data} />
+                      <Challan key={index} data={data} challan={challan} />
                       </div>
                   ))}
               </div>
@@ -60,9 +62,9 @@ const ViewChallanLayout = () => {
           <div className={(currentTab==='completed' ? '' : 'hidden ')+"p-4 rounded-lg"} id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
               {completedChallans?.length > 0 ? <></> : <h1 className='details-heading'>No Completed Challans Found</h1>}
               <div className='view-grid' >
-                  {completedChallans.map((data, index) => (
+                  {completedChallans.map((challan, index) => (
                       <div className='item mb-4'>
-                      <Challan key={index} data={data} isPending={false} />
+                      <Challan key={index} data={data} isPending={false} challan={challan} />
                       </div>
                   ))}
               </div>
@@ -70,9 +72,9 @@ const ViewChallanLayout = () => {
           <div className={(currentTab==='challenged' ? '' : 'hidden ')+"p-4 rounded-lg"} id="challenged" role="tabpanel" aria-labelledby="challenged-tab">
               {challengedChallans?.length > 0 ? <></> : <h1 className='details-heading'>No Challenged Challans Found</h1>}
               <div className='view-grid' >
-                  {challengedChallans.map((data, index) => (
+                  {challengedChallans.map((challan, index) => (
                       <div className='item mb-4'>
-                      <ChallangedChallan key={index} data={data} isPending={false} />
+                      <ChallangedChallan key={index} data={data} isPending={false} challan={challan} />
                       </div>
                   ))}
               </div>
