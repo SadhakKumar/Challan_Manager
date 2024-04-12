@@ -3,13 +3,40 @@ import Button from '../button/Button';
 import "@fontsource/poppins";
 import "./UploadProofCard.scss";
 import { useDropzone } from 'react-dropzone';
+import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 const UploadProofCard = ({data}) => {
+    const navigate = useNavigate();
+    console.log(data);
   const [proofFiles, setProofFiles] = useState([]);
 
-  const handleUploadClick = () => {
-      console.log("Upload Clicked");
-      // Handle uploading logic with proofFiles
+  const handleUploadClick = async() => {
+    try {
+        const response = await axios.post("http://localhost:3000/assets", {
+            "challanNo": "9876543217",
+            "carNo": "MH12AC2737",  
+            "challanAmount": 2000,
+            "reason": "OverSpeed",
+            "owner": "sadhak",
+            "proof": "VideoLink",
+            "status": "waiting"
+        }, {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+    
+        // Handle response if needed
+        console.log(response.data); // Assuming response contains some data you may need
+    
+      } catch (error) {
+        // Handle error
+        console.error('Failed to create asset:', error);
+      }
+
+      alert("Proof Uploaded Successfully");
+        navigate("/view");
   }
 
   const onDrop = useCallback((acceptedFiles) => {

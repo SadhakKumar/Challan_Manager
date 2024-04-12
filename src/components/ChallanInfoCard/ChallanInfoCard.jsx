@@ -1,11 +1,11 @@
 import React from "react";
 import "./ChallanInfoCard.scss";
 import "@fontsource/poppins";
-import Button from "../button/Button";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import useRazorpay from "react-razorpay";
 import axios from "axios";
+import Button from "../button/Button";
 
 
 const Challan = ({data, isPending=true}) => {
@@ -13,10 +13,10 @@ const Challan = ({data, isPending=true}) => {
 
   console.log(data)
   const navigate = useNavigate();
-  const handleChallengeClick = () => {
-    console.log("Challenge Clicked");
-    // navigate("/challenge");
+  const handleChallengeClick = async () => {
+    navigate("/challenge", { state: data });
   }
+  
   const handlePayClick = async(e) => {
     const API_URL = 'http://localhost:3000/';
     e.preventDefault();
@@ -78,6 +78,7 @@ const Challan = ({data, isPending=true}) => {
         </div>
       </>}
       </div>
+      
     </div>
   );
 };

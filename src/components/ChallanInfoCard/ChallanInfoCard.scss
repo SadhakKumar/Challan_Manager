@@ -30,6 +30,7 @@
             font-size: x-large;
           }
           p {
+            text-align: left;
             font-weight: normal;
           }
           .amount {
@@ -52,3 +53,46 @@
       }
     }
   }
+
+.challenged-challan {
+    display: flex;
+    align-items: center;
+    width: 96%;
+    padding: 1rem;
+    margin: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  
+    img {
+      min-width: 200px;
+      max-width: 400px;
+      height: 200px;
+    }
+  
+    .rightside {
+      .rightcontainer {
+        display: flex;
+        justify-content: space-between;
+        .challan_id {
+          font-family: poppins;
+          font-weight: bold;
+          font-size: x-large;
+        }
+        p {
+          font-weight: normal;
+        }
+        .amount {
+          font-weight: bold;
+          font-size: x-large;
+        }
+      }
+      .line {
+        border: none;
+        height: 1px;
+        background: rgb(216, 216, 216);
+        margin: 15px 0;
+      }
+    }
+  }
+  
