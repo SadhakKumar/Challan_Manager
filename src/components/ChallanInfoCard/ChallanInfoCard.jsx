@@ -1,9 +1,9 @@
 import React from "react";
 import "./ChallanInfoCard.scss";
 import "@fontsource/poppins";
-import Button from "../button/Button";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import Button from "../button/Button";
 
 const Challan = ({data, isPending=true}) => {
   console.log(data)
