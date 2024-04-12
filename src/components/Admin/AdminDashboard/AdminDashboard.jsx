@@ -47,6 +47,7 @@ const AdminDashboard = () => {
   return (
     <>
         <Navbar />
+        <main>
         <form className="vehicle-number-input" onChange={handleChange}>
           <input
             type="text"
@@ -69,6 +70,7 @@ const AdminDashboard = () => {
             )}
           </div>
         </div>
+        </main>
         <Footer />
     </>
 
