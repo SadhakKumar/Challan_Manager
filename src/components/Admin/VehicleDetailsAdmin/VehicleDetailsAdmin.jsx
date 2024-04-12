@@ -16,8 +16,6 @@ const VehicleDetailsAdmin = () => {
 
     const [vehicleDetails, setVehicleDetails] = useState([]);
     const [currentTab, setcurrentTab] = useState('pending');
-
-    const [data, setData] = useState(null);
     
     const [pendingChallans, setPendingChallans] = useState([]);
     const [completedChallans, setCompletedChallans] = useState([]);
@@ -40,7 +38,7 @@ const VehicleDetailsAdmin = () => {
             //     }
             // });
             
-            setData(challansResponse.data[0]);
+
             setPendingChallans(challansResponse.data[0].pending_challans);
             setCompletedChallans(challansResponse.data[0].completed_challans);
             setChallengedChallans(response?.data[0]?.challenged_challans ?? []);
@@ -79,9 +77,9 @@ const VehicleDetailsAdmin = () => {
             <div className={(currentTab==='pending' ? '' : 'hidden ')+"p-4 rounded-lg"} id="pending" role="tabpanel" aria-labelledby="pending-tab">
                 {pendingChallans?.length > 0 ? <></> : <h1 className='details-heading'>No Pending Challans Found</h1>}
                 <div className='grid' >
-                    {pendingChallans?.map((challan, index) => (
+                    {pendingChallans?.map((data, index) => (
                         <div className='item'>
-                        <Challan key={index} data={data} challan={challan}/>
+                        <Challan key={index} data={data} />
                         </div>
                     ))}
                 </div>
@@ -89,9 +87,9 @@ const VehicleDetailsAdmin = () => {
             <div className={(currentTab==='completed' ? '' : 'hidden ')+"p-4 rounded-lg"} id="completed" role="tabpanel" aria-labelledby="completed-tab">
                 {completedChallans?.length > 0 ? <></> : <h1 className='details-heading'>No Completed Challans Found</h1>}
                 <div className='grid' >
-                    {completedChallans?.map((challan, index) => (
+                    {completedChallans?.map((data, index) => (
                         <div className='item'>
-                        <Challan key={index} data={data} challan={challan}/>
+                        <Challan key={index} data={data} />
                         </div>
                     ))}
                 </div>
@@ -99,9 +97,9 @@ const VehicleDetailsAdmin = () => {
             <div className={(currentTab==='challenged' ? '' : 'hidden ')+"p-4 rounded-lg"} id="challenged" role="tabpanel" aria-labelledby="challenged-tab">
                 {challengedChallans?.length > 0 ? <></> : <h1 className='details-heading'>No Challenged Challans Found</h1>}
                 <div className='view-grid' >
-                    {challengedChallans?.map((challan, index) => (
+                    {challengedChallans?.map((data, index) => (
                         <div className='item'>
-                        <ChallangedChallan key={index} data={data} challan={challan}/>
+                        <ChallangedChallan key={index} data={data} />
                         </div>
                     ))}
                 </div>
