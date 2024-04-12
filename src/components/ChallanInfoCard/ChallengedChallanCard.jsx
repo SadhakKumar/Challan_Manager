@@ -5,16 +5,9 @@ import Button from "../button/Button";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const Challan = ({data, isPending=true}) => {
-  console.log(data)
+const ChallangedChallan = ({data}) => {
+  const status = data.status;
   const navigate = useNavigate();
-  const handleChallengeClick = () => {
-    console.log("Challenge Clicked");
-    // navigate("/challenge");
-  }
-  const handlePayClick = () => {
-    console.log("Pay Clicked");
-  }
   return (
     <div className="challan">
       <div className="">
@@ -22,32 +15,21 @@ const Challan = ({data, isPending=true}) => {
       </div>
       <div className="rightside">
         <div className="rightcontainer px-4">
-          <div className="challan__info">
+          <div className="challan__info text-left">
             <span className="challan_id">Challan Number: {data.challan_id}</span>
+            {status === 'accepted' && <span class="font-bold mx-2 px-2.5 py-0.5 my-4 rounded-full bg-green-600 text-white">Accepted</span>}
+            {status === 'rejected' && <span class="font-bold mx-2 px-2.5 py-0.5 my-4 rounded-full bg-red-600 text-white">Rejected</span>}
+            {status === 'pending' && <span class="font-bold mx-2 px-2.5 py-0.5 my-4 rounded-full bg-yellow-400 text-white">Pending</span>}
             <p className="mb-2">Reason: {data.reason}</p>
             <p className="mb-2">Location: {data.location}</p>
-            
+            <p className="mb-2">Proof Description: {data.proofDescription}</p>
           </div>
-          
           <div className="amount mt-4">Amount: Rs. {data.amount}</div>
           
         </div>
-
-      {isPending && <>
-        <hr className="line"/>
-
-        <div className="buttons">
-          <Link to="/challenge" state={data}>
-            <Button children="Challenge" onClick= {handleChallengeClick} color ="#ffffff"/>
-          </Link>
-          
-          <Button children="Pay" onClick = {handlePayClick} color= "#100775"/>
-        </div>
-      </>}
       </div>
-      
     </div>
   );
 };
 
-export default Challan;
+export default ChallangedChallan;
