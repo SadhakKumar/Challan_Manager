@@ -10,8 +10,9 @@ const ChallengeLayout = (props) => {
   return (
     <>
         <Navbar />
-        
-        <UploadProofCard data = {data}/>
+        <main>
+          <UploadProofCard data = {data}/>
+        </main>
         <Footer />
     </>
   )

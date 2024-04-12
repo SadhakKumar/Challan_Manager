@@ -20,11 +20,11 @@ const Navbar = () => {
           <SlArrowDown style={{ color: "black" }} />
         </li>
         <li className="navbar__menu-item">
-          <a href="#">About</a>
+          <a href="/privacy_policy">Privacy Policy</a>
           <SlArrowDown style={{ color: "black" }} />
         </li>
         <li className="navbar__menu-item">
-          <a href="#">Contact Us</a>
+          <a href="https://parivahan.gov.in/parivahan//node/3">Contact Us</a>
         </li>
         <li className="navbar__menu-item">
           <Button children="Profile" onClick={handleClick} color="#100775" />

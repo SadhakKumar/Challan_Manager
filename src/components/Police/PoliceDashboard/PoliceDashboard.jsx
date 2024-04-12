@@ -23,7 +23,7 @@ const PoliceDashboard = () => {
     let maxLength = 0;
     let maxLengthIndex = 0;
     responseChallans?.data?.forEach((vehicle, index) => {
-      if(vehicle.challans.length > maxLength){
+      if(vehicle?.challans?.length??0 > maxLength){
         maxLength = vehicle.challans.length;
         maxLengthIndex = index;
       }

@@ -5,7 +5,8 @@ import Button from "../button/Button";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const Challan = ({data}) => {
+const Challan = ({data, isPending=true}) => {
+  console.log(data)
   const navigate = useNavigate();
   const handleChallengeClick = () => {
     console.log("Challenge Clicked");
@@ -16,22 +17,23 @@ const Challan = ({data}) => {
   }
   return (
     <div className="challan">
-      <div className="challanimg">
+      <div className="">
         <img src={data.img} alt="car" />
       </div>
       <div className="rightside">
-        <div className="rightcontainer">
+        <div className="rightcontainer px-4">
           <div className="challan__info">
             <span className="challan_id">Challan Number: {data.challan_id}</span>
-            <p>Reason: {data.reason}</p>
-            <p>Location: {data.location}</p>
+            <p className="mb-2">Reason: {data.reason}</p>
+            <p className="mb-2">Location: {data.location}</p>
             
           </div>
           
-          <div className="amount">Amount: Rs. {data.amount}</div>
+          <div className="amount mt-4">Amount: Rs. {data.amount}</div>
           
         </div>
 
+      {isPending && <>
         <hr className="line"/>
 
         <div className="buttons">
@@ -40,11 +42,9 @@ const Challan = ({data}) => {
           </Link>
           
           <Button children="Pay" onClick = {handlePayClick} color= "#100775"/>
-        </div>  
-
+        </div>
+      </>}
       </div>
-      
-
     </div>
   );
 };
