@@ -22,7 +22,7 @@ const AdminDashboard = () => {
       // const responseObject = response;
       // setAllCars(responseObject);
       // console.log(responseObject);
-
+      // get allcars api
       await axios.get('/cars')
       .then((response) => {
         console.log(response.data);
@@ -39,7 +39,7 @@ const AdminDashboard = () => {
       //   console.error('Error fetching data:', error);
       // })
 
-      const response = await axios.get('http://localhost:3000/assets');
+      const response = await axios.get('http://localhost:4000/assets');
       setChallengedChallans(response.data);
       console.log(response.data);
 

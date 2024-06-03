@@ -23,6 +23,7 @@ const VehicleDetailsAdmin = () => {
   
     const getVehicleDetails = async () => {
         try {
+            // get details wala api use karo 
             const response = await axios.get(`/cars?vehicle=${vehicleno}`);
             setVehicleDetails(response.data[0]);
 

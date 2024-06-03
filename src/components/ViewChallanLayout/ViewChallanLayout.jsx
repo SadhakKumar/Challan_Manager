@@ -5,6 +5,7 @@ import Navbar from '../Navbar/Navbar'
 import { useSelector } from 'react-redux'
 import {getVehicleNo, getChassisNo} from '../../features/Search/SearchSlice'
 import axios from '../../api/axios'
+// import axios from 'axios'
 import VehicleDetailsAdmin from '../Admin/VehicleDetailsAdmin/VehicleDetailsAdmin'
 import ChallangedChallan from '../ChallanInfoCard/ChallengedChallanCard'
 
@@ -18,25 +19,45 @@ const ViewChallanLayout = () => {
   const [pendingChallans, setPendingChallans] = useState([]);
   const [completedChallans, setCompletedChallans] = useState([]);
   const [challengedChallans, setChallengedChallans] = useState([]);
+    const[owner, setOwner] = useState('');
 
+// can use getcar api here
   useEffect(() => {
     const getChallans = async() =>{
-      const response = await axios.get('/challans?vehicle_no='+vehicleNo+'&chassis_no='+chassisNo);
-      setPendingChallans(response?.data[0]?.pending_challans ?? []);
-      setCompletedChallans(response?.data[0]?.completed_challans ?? []);
-      
+
+        try{
+            const response = await axios.get('/getCrDetails',
+            {
+               params:{ 
+                vehicle_number: vehicleNo  
+                }
+            }
+          );
+          setOwner(response.data.Owner);
+          if (response.data.Challans.length > 0) {
+            const pending = response.data.Challans.filter(data => data.Status === "Pending");
+            const completed = response.data.Challans.filter(data => data.Status === "Completed");
+            setPendingChallans(pending);
+            setCompletedChallans(completed);
+          }
+        }catch(error){
+            console.error('Error fetching challans:', error);
+        }
     }
 
 
     const getChallengedChallans = async() =>{
-        const response = await axios.get("http://localhost:3000/assets");
-        console.log(response.data);
-        setChallengedChallans(response.data);
-        console.log("challengedChallans" + challengedChallans);
+        try{
+            const response = await axios.get("http://localhost:4000/assets");
+            setChallengedChallans(response.data);
+        }catch (error){
+            console.error('Error fetching challenged challans with error:', error);
+        }
+        
     }
     getChallengedChallans();
     getChallans();
-  },[chassisNo, vehicleNo]);
+  },[vehicleNo]);
 
   return (
     <>
@@ -61,7 +82,7 @@ const ViewChallanLayout = () => {
               <div className='view-grid' >
                   {pendingChallans.map((data, index) => (
                       <div className='item mb-4'>
-                      <Challan key={index} data={data} />
+                      <Challan key={index} owner = {owner} data={data} />
                       </div>
                   ))}
               </div>
@@ -71,7 +92,7 @@ const ViewChallanLayout = () => {
               <div className='view-grid' >
                   {completedChallans.map((data, index) => (
                       <div className='item mb-4'>
-                      <Challan key={index} data={data} isPending={false} />
+                      <Challan key={index} data={data} owner = {owner} isPending={false} />
                       </div>
                   ))}
               </div>

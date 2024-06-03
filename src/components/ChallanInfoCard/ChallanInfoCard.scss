@@ -1,98 +1,123 @@
 .challan {
-    display: flex;
-    align-items: center;
-    width: 96%;
-    padding: 1rem;
-    margin: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  
-    img {
-      min-width: 200px;
-      max-width: 400px;
-      height: 200px;
-    }
+  display: flex;
+  align-items: center;
+  width: 96%;
+  padding: 1rem;
+  margin: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 
-    .rightside {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 100%;
-        padding: 0 1rem;
-        font-family: poppins;
-        .rightcontainer{
-          display: flex;
-          justify-content: space-between;
-          .challan_id {
-            font-family: poppins;
-            font-weight: bold;
-            font-size: x-large;
-          }
-          p {
-            text-align: left;
-            font-weight: normal;
-          }
-          .amount {
-            
-            font-weight: bold;
-            font-size: x-large;
-          }
-      }
-      .buttons{
-        display: flex;
-        justify-content: end;
-        // margin-top: 1rem;
-      }
-
-      .line {
-        border: none;
-        height: 1px;
-        background: rgb(216, 216, 216);
-        margin: 15px 0;
-      }
-    }
+  img {
+    min-width: 200px;
+    max-width: 400px;
+    height: 200px;
   }
 
-.challenged-challan {
+  .rightside {
     display: flex;
-    align-items: center;
-    width: 96%;
-    padding: 1rem;
-    margin: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  
-    img {
-      min-width: 200px;
-      max-width: 400px;
-      height: 200px;
-    }
-  
-    .rightside {
-      .rightcontainer {
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 1rem;
+    font-family: poppins;
+
+    .rightcontainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .challan__info {
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+
+        .challan_id,
+        p {
+          text-align: left;
+          font-weight: normal;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 100%;
+          display: block; /* Ensure the text behaves as a block element */
+        }
+
         .challan_id {
           font-family: poppins;
           font-weight: bold;
           font-size: x-large;
         }
-        p {
-          font-weight: normal;
-        }
-        .amount {
-          font-weight: bold;
-          font-size: x-large;
-        }
       }
-      .line {
-        border: none;
-        height: 1px;
-        background: rgb(216, 216, 216);
-        margin: 15px 0;
+
+      .amount {
+        font-weight: bold;
+        font-size: x-large;
       }
     }
+
+    .buttons {
+      display: flex;
+      justify-content: end;
+    }
+
+    .line {
+      border: none;
+      height: 1px;
+      background: rgb(216, 216, 216);
+      margin: 15px 0;
+    }
   }
-  
+}
+
+.challenged-challan {
+  display: flex;
+  align-items: center;
+  width: 96%;
+  padding: 1rem;
+  margin: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+  img {
+    min-width: 200px;
+    max-width: 400px;
+    height: 200px;
+  }
+
+  .rightside {
+    .rightcontainer {
+      display: flex;
+      justify-content: space-between;
+
+      .challan_id,
+      p {
+        text-align: left;
+        font-weight: normal;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+        display: block; /* Ensure the text behaves as a block element */
+      }
+
+      .challan_id {
+        font-family: poppins;
+        font-weight: bold;
+        font-size: x-large;
+      }
+
+      .amount {
+        font-weight: bold;
+        font-size: x-large;
+      }
+    }
+
+    .line {
+      border: none;
+      height: 1px;
+      background: rgb(216, 216, 216);
+      margin: 15px 0;
+    }
+  }
+}

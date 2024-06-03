@@ -10,7 +10,7 @@ const AdminChallangedChallan = ({data}) => {
 
   const handleAccept = async() => {
 
-    const response = await axios.put(`http://localhost:3000/assets/${data.ChallanNo}`,{
+    const response = await axios.put(`http://localhost:4000/assets/${data.ChallanNo}`,{
       "carNo": data.CarNo,
       "challanAmount": data.ChallanAmount,
       "reason": data.Reason,
@@ -22,12 +22,12 @@ const AdminChallangedChallan = ({data}) => {
     console.log(response);
 
     alert("Challange Accepted");
-    navigate('/admin/dashboard');
+    window.location.reload(true);
   }
 
   const handleReject = async() => {
 
-    const response = await axios.put(`http://localhost:3000/assets/${data.ChallanNo}`,{
+    const response = await axios.put(`http://localhost:4000/assets/${data.ChallanNo}`,{
       "carNo": data.CarNo,
       "challanAmount": data.ChallanAmount,
       "reason": data.Reason,

@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux'
 import {getVehicleNo, getChassisNo} from '../../features/Search/SearchSlice'
 
-const UploadProofCard = ({data}) => {
+const UploadProofCard = ({data,owner}) => {
     const vehicleNo = useSelector(getVehicleNo);
 
     const navigate = useNavigate();
@@ -17,23 +17,37 @@ const UploadProofCard = ({data}) => {
 
   const handleUploadClick = async() => {
     try {
-        const response = await axios.post("http://localhost:3000/assets", {
-            "challanNo": data.challan_id,
-            "carNo": vehicleNo,  
-            "challanAmount": data.amount,
-            "reason": data.reason,
-            "owner": "sadhak",
-            "proof": data.img,
-            "status": "waiting"
-        }, {
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        });
-    
-        // Handle response if needed
-        console.log(response.data); // Assuming response contains some data you may need
-    
+        try{
+            const response = await axios.post("http://localhost:4000/assets", {
+                "challanNo": data.ChallanID,
+                "carNo": vehicleNo,  
+                "challanAmount": data.Fine,
+                "reason": data.Reason,
+                "owner": owner,
+                "proof": data.ImageLink,
+                "status": "waiting"
+            }, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+        }catch(error){
+            console.log("Error in uploading proof",error)
+        }
+        
+        try{
+            const updateChallanStatus = await axios.put("https://vhkmn0g6-8000.inc1.devtunnels.ms/updatestatus",{
+                "vehicle_number": vehicleNo,
+                "challan_id": data.ChallanID,
+                "new_status": "Challenged"
+            },{
+                headers: {
+                'Content-Type': 'application/json'
+                }
+            });
+        }catch (error){
+            console.error('Error fetching challenged challans with error:', error);
+        }
       } catch (error) {
         // Handle error
         console.error('Failed to create asset:', error);
@@ -57,15 +71,15 @@ const UploadProofCard = ({data}) => {
           <div className="rightside">
               <div className="rightcontainer">
                   <div className="challan__info">
-                      <span className="challan_id">Challan Number: {data.challan_id}</span>
-                      <p>Reason: {data.reason}</p>
-                      <p>Location: {data.location}</p>
+                      <span className="challan_id">Challan Number: {data.ChallanID.length > 20 ? data.ChallanID.substring(0,20) + "..." : data.ChallanID}</span>
+                      <p>Reason: {data.Reason}</p>
+                      <p>Location: {data.Location}</p>
                   </div>
 
                   <hr className="line" />
 
                   <div className="amount">
-                      <div className="">Amount: Rs. {data.amount}</div>
+                      <div className="">Amount: Rs. {data.Fine}</div>
                   </div>
               </div>
 
