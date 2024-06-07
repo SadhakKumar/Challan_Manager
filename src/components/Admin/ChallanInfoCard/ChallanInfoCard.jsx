@@ -12,13 +12,13 @@ const Challan = ({data}) => {
       </div>
       <div className="rightcontainer">
         <div className="challan__info">
-          <p className="challan_id">Vehicle Number: {data.vehicle}</p>
-          <p>Owner: {data.owner}</p>
-          <p>Contact: {data.contact}</p>
-          <p>Company: {data.make}</p>
-          <p>Model: {data.model}</p>
-          <p>Color: {data.color}</p>
-          <p className="amount">Chassis No: {data.chassis_no}</p>
+          <p className="challan_id">Vehicle Number: {data.VehicleNumber}</p>
+          <p>Owner: {data.Owner}</p>
+          <p>Contact: {data.PhoneNumber}</p>
+          {/* <p>Company: {data.make}</p> */}
+          {/* <p>Model: {data.model}</p> */}
+          {/* <p>Color: {data.color}</p> */}
+          <p className="amount">Chassis No: {data.ChassisNumber}</p>
         </div>
       </div>
       </Link>

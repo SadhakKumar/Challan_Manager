@@ -48,7 +48,8 @@ const ViewChallanLayout = () => {
 
     const getChallengedChallans = async() =>{
         try{
-            const response = await axios.get("http://localhost:4000/assets");
+            const response = await axios.get(`http://localhost:4000/assets/${vehicleNo}`);
+            console.log(response.data);
             setChallengedChallans(response.data);
         }catch (error){
             console.error('Error fetching challenged challans with error:', error);
@@ -72,7 +73,8 @@ const ViewChallanLayout = () => {
                   <button className="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false" onClick={() => setcurrentTab('completed')}>Completed Challans ({completedChallans.length})</button>
               </li>
               <li className="me-2" role="presentation">
-                  <button className="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="challenged-tab" data-tabs-target="#challenged" type="button" role="tab" aria-controls="challenged" aria-selected="false" onClick={() => setcurrentTab('challenged')}>Challenged Challans ({challengedChallans.length})</button>
+                  <button className="inline-block p-4 border-b-2 rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="challenged-tab" data-tabs-target="#challenged" type="button" role="tab" aria-controls="challenged" aria-selected="false" onClick={() => setcurrentTab('challenged')}>Challenged Challans
+                  ({challengedChallans.length})</button>
               </li>
           </ul>
       </div>

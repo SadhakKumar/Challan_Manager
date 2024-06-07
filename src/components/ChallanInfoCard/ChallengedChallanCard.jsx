@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const ChallangedChallan = ({data}) => {
+  console.log(data.ChallanNo.length)
   const status = data.Status;
   const navigate = useNavigate();
   return (
@@ -16,13 +17,13 @@ const ChallangedChallan = ({data}) => {
       <div className="rightside">
         <div className="rightcontainer px-4">
           <div className="challan__info text-left">
-            <span className="challan_id">Challan Number: {data.ChallanNo}</span>
-            {status === 'accepted' && <span class="font-bold mx-2 px-2.5 py-0.5 my-4 rounded-full bg-green-600 text-white">Accepted</span>}
-            {status === 'rejected' && <span class="font-bold mx-2 px-2.5 py-0.5 my-4 rounded-full bg-red-600 text-white">Rejected</span>}
-            {status === 'waiting' && <span class="font-bold mx-2 px-2.5 py-0.5 my-4 rounded-full bg-yellow-400 text-white">Pending</span>}
+            <span className="challan_id">Challan Number: {data.ChallanNo.length > 15 ? data.ChallanNo.substring(0,15) + "..." : data.ChallanNo}</span>
+            {status === 'accepted' && <span class="font-bold mx-0 px-2.5 py-0.5 my-4 rounded-full bg-green-600 text-white">Accepted</span>}
+            {status === 'rejected' && <span class="font-bold mx-0 px-2.5 py-0.5 my-4 rounded-full bg-red-600 text-white">Rejected</span>}
+            {status === 'waiting' && <span class="font-bold mx-0 px-2.5 py-0.5 my-4 rounded-full bg-yellow-400 text-white">Pending</span>}
             <p className="mb-2">Reason: {data.Reason}</p>
             <p className="mb-2">Location: Mumbai</p>
-            <p className="mb-2">Proof Description: {data.Proof}</p>
+            <p className="mb-2">Proof Link: <a href={data.Proof} target="_blank">{data.Proof.length > 25 ? data.Proof.substring(0,15) + "..." : data.Proof}</a></p>
           </div>
           <div className="amount mt-4">Amount: Rs. {data.ChallanAmount}</div>
           

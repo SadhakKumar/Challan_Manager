@@ -13,9 +13,14 @@ const UploadProofCard = ({data,owner}) => {
 
     const navigate = useNavigate();
     console.log(data);
-  const [proofFiles, setProofFiles] = useState([]);
+  const [proofLink, setProofLink] = useState('');
 
   const handleUploadClick = async() => {
+
+    if(proofLink === ''){
+        alert("Please enter the URL of the proof");
+        return; 
+    }
     try {
         try{
             const response = await axios.post("http://localhost:4000/assets", {
@@ -24,7 +29,7 @@ const UploadProofCard = ({data,owner}) => {
                 "challanAmount": data.Fine,
                 "reason": data.Reason,
                 "owner": owner,
-                "proof": data.ImageLink,
+                "proof": proofLink,
                 "status": "waiting"
             }, {
                 headers: {
@@ -57,11 +62,11 @@ const UploadProofCard = ({data,owner}) => {
         navigate("/view");
   }
 
-  const onDrop = useCallback((acceptedFiles) => {
-      setProofFiles([...proofFiles, ...acceptedFiles]);
-  }, [proofFiles]);
+//   const onDrop = useCallback((acceptedFiles) => {
+//       setProofFiles([...proofFiles, ...acceptedFiles]);
+//   }, [proofFiles]);
 
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop, accept: 'image/*,video/*' });
+//   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop, accept: 'image/*,video/*' });
 
   return (
       <div className="challan">
@@ -83,26 +88,14 @@ const UploadProofCard = ({data,owner}) => {
                   </div>
               </div>
 
-              <div className="proof-section" {...getRootProps()}>
-                  <input {...getInputProps()} />
-                  {
-                      isDragActive ?
-                          <p>Drop the files here...</p> :
-                          <p>Drag 'n' drop some files here, or click to select files</p>
-                  }
-                  {proofFiles.length > 0 && (
-                      <div>
-                          <p>Proof Files:</p>
-                          <ul>
-                              {proofFiles.map((file, index) => (
-                                  <li key={index}>
-                                      {file.name}
-                                      <button onClick={() => setProofFiles(proofFiles.filter((_, i) => i !== index))}>Delete</button>
-                                  </li>
-                              ))}
-                          </ul>
-                      </div>
-                  )}
+              <div className="proof-section" >
+                <input 
+                type="text" 
+                placeholder="Enter the URL of the proof"
+                className="proof-input"
+                value = {proofLink}
+                onChange={(e) => setProofLink(e.target.value)}
+                />
               </div>
 
               <hr className="line" />

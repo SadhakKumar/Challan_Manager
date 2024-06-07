@@ -3,7 +3,7 @@ import "./ChallanInfoCard.scss";
 import "@fontsource/poppins";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import axios from "../../../api/axios"
 
 const AdminChallangedChallan = ({data}) => {
   const navigate = useNavigate();
@@ -21,8 +21,18 @@ const AdminChallangedChallan = ({data}) => {
 
     console.log(response);
 
+    
+    const updateChallanStatus = await axios.put("/updatestatus", {
+      
+      "vehicle_number": data.CarNo,
+      "challan_id": data.ChallanNo,
+      "new_status": "Accepted"
+      
+    })
+
     alert("Challange Accepted");
     window.location.reload(true);
+
   }
 
   const handleReject = async() => {
@@ -37,6 +47,16 @@ const AdminChallangedChallan = ({data}) => {
     })
 
     console.log(response);
+
+
+    const updateChallanStatus = await axios.put("/updatestatus", {
+      
+      "vehicle_number": data.CarNo,
+      "challan_id": data.ChallanNo,
+      "new_status": "Pending"
+      
+    })
+
 
     alert("Challange rejected");
     navigate('/admin/dashboard');

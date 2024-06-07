@@ -23,21 +23,13 @@ const AdminDashboard = () => {
       // setAllCars(responseObject);
       // console.log(responseObject);
       // get allcars api
-      await axios.get('/cars')
+      await axios.get('/getallcars')
       .then((response) => {
         console.log(response.data);
         setAllCars(response.data);
       }).catch((error) => {
         console.error('Error fetching data:', error);
       })
-
-      // await axios.get('/challanged_challans')
-      // .then((response) => {
-      //   console.log(response.data);
-      //   setChallengedChallans(response.data);
-      // }).catch((error) => {
-      //   console.error('Error fetching data:', error);
-      // })
 
       const response = await axios.get('http://localhost:4000/assets');
       setChallengedChallans(response.data);
@@ -57,9 +49,9 @@ const AdminDashboard = () => {
   }
 
   const filterCars = allCars.filter((car) => {
-    return car.vehicle.toLowerCase().includes(searchedCars.toLowerCase());
+    return car.VehicleNumber.toLowerCase().includes(searchedCars.toLowerCase());
   })
-  return (
+  return (  
     <>
       <Navbar />
       <main>
