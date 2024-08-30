@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export default axios.create({
-    baseURL: "https://vhkmn0g6-8000.inc1.devtunnels.ms/",
+    baseURL: "https://22bxdf11-8000.inc1.devtunnels.ms/",
 })

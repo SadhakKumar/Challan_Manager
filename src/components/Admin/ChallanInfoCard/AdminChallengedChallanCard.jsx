@@ -7,9 +7,7 @@ import axios from "../../../api/axios"
 
 const AdminChallangedChallan = ({data}) => {
   const navigate = useNavigate();
-
   const handleAccept = async() => {
-
     const response = await axios.put(`http://localhost:4000/assets/${data.ChallanNo}`,{
       "carNo": data.CarNo,
       "challanAmount": data.ChallanAmount,
@@ -72,7 +70,7 @@ const AdminChallangedChallan = ({data}) => {
       <div className="rightside flex-column">
         <div className="rightcontainer px-4">
           <div className="challan__info text-left">
-            <span className="challan_id">Challan Number: {data.ChallanNo}</span>
+            <span className="challan_id">Challan Number: {data.ChallanNo.substring(0,7)}...</span>
             {status === 'accepted' && <span class="font-bold mx-2 px-2.5 py-0.5 my-4 rounded-full bg-green-600 text-white">Accepted</span>}
             {status === 'rejected' && <span class="font-bold mx-2 px-2.5 py-0.5 my-4 rounded-full bg-red-600 text-white">Rejected</span>}
             {status === 'waiting' && <span class="font-bold mx-2 px-2.5 py-0.5 my-4 rounded-full bg-yellow-400 text-white">Pending</span>}

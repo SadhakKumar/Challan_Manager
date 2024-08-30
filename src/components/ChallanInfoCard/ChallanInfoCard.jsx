@@ -7,7 +7,7 @@ import Button from "../button/Button";
 import axios from "axios";
 import { useSelector } from 'react-redux'
 import {getVehicleNo, getChassisNo} from '../../features/Search/SearchSlice'
-
+// import { mailChallanPaidNotification } from "../../utils/email";
 
 // Status update wala api lagega for cars
 
@@ -17,7 +17,7 @@ const Challan = ({data,owner, isPending=true}) => {
 
   const updateStatus = async() => {
     try{
-      const updateChallanStatus = await axios.put("https://vhkmn0g6-8000.inc1.devtunnels.ms/updatestatus",{
+      const updateChallanStatus = await axios.put("https://22bxdf11-8000.inc1.devtunnels.ms/updatestatus",{
           "vehicle_number": vehicleNo,
           "challan_id": data.ChallanID,
           "new_status": "Completed"

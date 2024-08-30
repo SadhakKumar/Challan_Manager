@@ -37,6 +37,7 @@ const ViewChallanLayout = () => {
           if (response.data.Challans.length > 0) {
             const pending = response.data.Challans.filter(data => data.Status === "Pending");
             const completed = response.data.Challans.filter(data => data.Status === "Completed");
+            
             setPendingChallans(pending);
             setCompletedChallans(completed);
           }

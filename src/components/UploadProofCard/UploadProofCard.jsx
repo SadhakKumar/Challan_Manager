@@ -41,7 +41,7 @@ const UploadProofCard = ({data,owner}) => {
         }
         
         try{
-            const updateChallanStatus = await axios.put("https://vhkmn0g6-8000.inc1.devtunnels.ms/updatestatus",{
+            const updateChallanStatus = await axios.put("https://22bxdf11-8000.inc1.devtunnels.ms/updatestatus",{
                 "vehicle_number": vehicleNo,
                 "challan_id": data.ChallanID,
                 "new_status": "Challenged"
